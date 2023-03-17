@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container text-center col-lg-6">
+        <div class="d-flex justify-content-center flex-column mb-3">
+            <h1>Budget Form</h1>
+            {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+                <div class="mb-3">
+                    {{ form_row(form.budget) }}
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-dark">Calculate</button>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
