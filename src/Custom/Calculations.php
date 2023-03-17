@@ -33,7 +33,8 @@ class Calculations
     */
     public function calculateAssociationFee($vehiclePrice):int
     {
-        if ( $vehiclePrice < 1) {
+        $vehiclePrice = round($vehiclePrice,2);
+        if ( round($vehiclePrice,2) < 1) {
         return 0;
         } elseif ($vehiclePrice >= 1 && $vehiclePrice <= 500) {
         return 5;
@@ -136,39 +137,5 @@ class Calculations
             'budget' => $budget,
         );
     }
-
-
-    /**
-    * Function to show the results of operations
-    *
-    * @param float $maxVehicleAmount
-    * @param float $storageFee
-    * @param float $basicFee
-    * @param float $specialFee
-    * @param float $associationFee
-    * @param float $budget
-    * @return void
-    */
-    public function showReport(
-        float $maxVehicleAmount,
-        float $storageFee,
-        float $basicFee,
-        float $specialFee,
-        float $associationFee,
-        float $budget
-    ): void 
-    {
-        echo "Presupuesto inicial: " . round($budget, 2) . PHP_EOL;
-        echo "Precio del producto: " . round($maxVehicleAmount, 2) . PHP_EOL;
-        echo "Impuesto básico: " . round($basicFee, 2) . PHP_EOL;
-        echo "Impuesto de venta: " . round($specialFee, 2) . PHP_EOL;
-        echo "Impuesto de asociación: " . round($associationFee, 2) . PHP_EOL;
-        echo "Impuesto de almacenamiento:" .  round($storageFee, 2) . PHP_EOL;
-        echo "==========================" .  PHP_EOL;
-    }
-
-
-
-
 
 }
