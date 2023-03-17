@@ -35,15 +35,15 @@ class Calculations
     {
         $vehiclePrice = round($vehiclePrice,2);
         if ( round($vehiclePrice,2) < 1) {
-        return 0;
+            return 0;
         } elseif ($vehiclePrice >= 1 && $vehiclePrice <= 500) {
-        return 5;
+            return 5;
         } elseif ($vehiclePrice <= 1000) {
-        return 10;
+            return 10;
         } elseif ($vehiclePrice <= 3000) {
-        return 15;
+            return 15;
         } else {
-        return 20;
+            return 20;
         }
     }
 
